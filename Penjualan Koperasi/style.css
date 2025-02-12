@@ -1,0 +1,263 @@
+html, body {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, Main, Footer */
+}
+
+/* Gaya umum */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav {
+    display: grid;
+    place-items: center; /* Posisi menu ke tengah */
+  }
+
+  /* Style untuk link di menu */
+  nav a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* Efek hover */
+  nav a:hover {
+    background-color: #007bff; /* Warna biru sesuai dengan tombol */
+    color: white; /* Warna teks putih agar kontras */
+    transform: scale(1.05); /* Efek membesar sedikit saat hover */
+  }
+
+  /* Efek klik */
+  nav a:active {
+    background-color: #0056b3;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Atur item menu horizontal */
+  }
+  
+  nav li {
+    margin: 0 10px; /* Jarak antar item menu */
+  }
+
+  nav li:hover {
+    color: gray;
+  }
+  
+  main {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-bottom: 100px; /* Tambahkan jarak bawah agar tidak terlalu dekat dengan footer */
+  }
+  
+  /*daftar produk pada halaman beranda*/
+  /* Khusus daftar produk di halaman index.php */
+.daftar-produk.home {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Produk di index hanya tampil lebih besar dan berjarak */
+.daftar-produk.home .produk-item {
+  width: 30%; /* Atur agar hanya 3 produk sejajar */
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #f8f9fa;
+}
+
+/* Tambahkan efek hover di halaman index */
+.daftar-produk.home .produk-item:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+
+  /*daftar produk pada halaman produk*/
+  .produk {
+    text-align: center;
+  }
+  
+  .daftar-produk {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 produk per baris */
+    gap: 20px; /* Jarak antar produk */
+    justify-content: center; /* Pusatkan produk jika kurang dari 4 */
+  }
+  
+  /* Style untuk produk item */
+  .produk-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 10px; /* Kurangi padding agar gambar lebih dekat dengan border */
+    margin: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+  }
+
+  /* Efek hover */
+  .produk-item:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Style untuk gambar produk */
+  .produk-item img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 5px; /* Kurangi jarak bawah gambar */
+  }
+
+  /* Style untuk nama produk */
+  .produk-item h3 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word; /* Memastikan teks panjang terputus ke baris berikutnya */
+    overflow-wrap: break-word; /* Alternatif untuk menangani pemisahan kata */
+    max-width: 150px; /* Sesuaikan dengan lebar gambar agar tetap proporsional */
+  }
+
+  /* Style untuk harga dan tombol */
+  .harga-dan-tombol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px; /* Kurangi jarak antara gambar dan harga */
+  }
+
+  /* Style untuk harga */
+  .harga {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  /* Style tombol Beli */
+  button[name="tambah_keranjang"] {
+    background-color: #007bff; /* Warna biru yang sesuai dengan style yang ada */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Efek hover */
+  button[name="tambah_keranjang"]:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+  }
+
+  /* Efek klik */
+  button[name="tambah_keranjang"]:active {
+    background-color: #004085;
+  }
+
+  #keranjang {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  
+  #daftar-belanja {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #daftar-belanja li {
+    margin-bottom: 10px;
+  }
+
+  .harga {
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+  }
+
+  #daftar-belanja {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #daftar-belanja th, #daftar-belanja td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #daftar-belanja th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  /*style button edit*/
+  .btn-edit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+  
+  /*style button hapus*/
+  .btn-hapus {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-hapus:hover {
+    background-color: darkred;
+}
+
+  /* Footer tetap di bawah */
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
